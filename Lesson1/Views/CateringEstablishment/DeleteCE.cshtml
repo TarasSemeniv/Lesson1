@@ -1,0 +1,14 @@
+﻿@model CateringEstablishment
+<h2>Are you sure want to delete this catering establishment?</h2>
+<p>@Model.Name</p>
+<br />
+<p>@Model.Place</p>
+<br />
+<p>@Model.Grade</p>
+<br />
+
+<form method="post">
+	<input type="hidden" asp-for="Id" />
+	<a asp-action="GetCE">Cancel</a>
+	<input class="btn btn-danger" type="submit" value="Delete" />
+</form>

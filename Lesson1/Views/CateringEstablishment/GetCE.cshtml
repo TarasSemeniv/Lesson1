@@ -1,0 +1,31 @@
+﻿@model IEnumerable<CateringEstablishment>
+
+
+
+<h1>Catering Establishment</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Place</th>
+            <th>Grade</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ce in Model)
+        {
+            <tr>
+                <td>@ce.Name</td>
+                <td>@ce.Place</td>
+                <td>@ce.Grade</td>
+                <td>
+                    <a class="btn btn-danger" asp-action="DeleteCE" asp-route-id="@ce.Id">Delete</a>
+                    <a class="btn btn-warning" asp-action="EditCE" asp-route-id="@ce.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="AddCE" class="btn btn-warning">Add catering establishment</a>
